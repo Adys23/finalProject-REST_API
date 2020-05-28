@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Classes from './Players.module.scss';
 
 import PlayersData from './playersData/playersData';
 
-const playersInfo = (props) => (
-	<div className={Classes.PlayersData}>
-		<h2>Here I will show you players data</h2>
-		<PlayersData />
-	</div>
-);
+const PlayersInfo = (props) => {
+	const [searchedPhrase, setSearchedPhrase] = useState('');
 
-export default playersInfo;
+	const onSearchInputChange = (event) => {
+		setSearchedPhrase(event.target.value.toLowerCase());
+	};
+
+	return (
+		<div className={Classes.PlayersData}>
+			<h2>Here I will show you players data</h2>
+			<label>Search:</label>
+			<input onChange={onSearchInputChange}></input>
+			<PlayersData searchedPhrase={searchedPhrase} />
+		</div>
+	);
+};
+
+export default PlayersInfo;

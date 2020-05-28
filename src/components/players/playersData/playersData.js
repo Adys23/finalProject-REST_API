@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from 'react';
+import { fetchData } from '../../../services/playersAPI';
+import { mapPositions } from '../../../services/mapPositions';
 
-const Players = () => {
-	const [hasError, setErrors] = useState(false);
-	const [players, setPlayers] = useState({});
-
-	const proxyurl = 'https://cors-anywhere.herokuapp.com/';
-	const url = 'https://fantasy.premierleague.com/api/bootstrap-static/';
-
-	async function fetchData() {
-		const res = await fetch(proxyurl + url);
-		res
-			.json()
-			.then((res) => setPlayers(res.elements))
-			.catch((err) => setErrors(err));
-	}
+const Players = ({ searchedPhrase }) => {
+	const [data, setData] = useState({ elements: [] });
 
 	useEffect(() => {
-		fetchData();
-	});
+		const onFetchSuccess = (data) => {
+			const mappedData = mapPositions(data);
+			setData(mappedData);
+		};
+
+		fetchData(onFetchSuccess);
+	}, []);
 
 	return (
-		<div>
-			<span>{JSON.stringify(players)}</span>
-			<hr />
-			<span>Has error: {JSON.stringify(hasError)}</span>
-		</div>
+		<ul>
+			{data.elements
+				.filter(({ first_name, second_name }) =>
+					`${first_name} ${second_name}`.toLowerCase().includes(searchedPhrase)
+				)
+				.map((item) => (
+					<li key={item.id}>
+						<span>
+							{item.first_name}
+							&nbsp;
+							{item.second_name}
+						</span>
+						<span>{item.element_type}</span>
+					</li>
+				))}
+		</ul>
 	);
 };
+
 export default Players;
