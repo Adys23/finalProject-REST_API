@@ -1,3 +1,5 @@
+$hover-violet: rgb(84, 51, 128);
+
 .playersList {
 	list-style: none;
 	display: flex;
@@ -15,10 +17,17 @@
 	border: 1px solid #666666;
 	padding: 5px 10px;
 	max-width: 600px;
+	min-width: 200px;
 	display: grid;
 	grid-template-areas:
 		'playerName playerName playerName'
 		'team playerPosition value';
+}
+
+.playerInfo:hover {
+	color: white;
+	background-color: $hover-violet;
+	cursor: pointer;
 }
 
 .playerTeam {

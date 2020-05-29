@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import classes from './playersData.module.scss';
+import classes from './teamsData.module.scss';
 import { fetchData } from '../../../services/playersAPI';
-import { mapPositions } from '../../../services/mapPositions';
-import { mapClubName } from '../../../services/mapClubName';
 
-const Players = ({ searchedPhrase }) => {
-	const [data, setData] = useState({ elements: [] });
+const TeamsData = () => {
+	const [data, setData] = useState({ teams: [] });
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
 
 	useEffect(() => {
 		const onFetchSuccess = (data) => {
-			const mappedPosData = mapPositions(data);
-			const mappedClubData = mapClubName(mappedPosData);
-			setData(mappedClubData);
+			setData(data);
 		};
 
 		const onFetchFailure = (err) => {
@@ -23,7 +19,7 @@ const Players = ({ searchedPhrase }) => {
 	}, []);
 
 	useEffect(() => {
-		if (data.elements.length === 0 && isError === false) {
+		if (data.teams.length === 0 && isError === false) {
 			setIsLoading(true);
 		} else {
 			setIsLoading(false);
@@ -37,27 +33,18 @@ const Players = ({ searchedPhrase }) => {
 			{isLoading ? (
 				<div>Loading ...</div>
 			) : (
-				<ul className={classes.playersList}>
-					{data.elements.map((item) => (
-						<li key={item.id} className={classes.playerInfo}>
-							<span className={classes.playerName}>
-								{item.first_name}
-								&nbsp;
-								{item.second_name}
-							</span>
-							<span>{item.team}</span>
-							<span className={classes.playerPosition}>
-								{item.element_type}
-							</span>
-							<span className={classes.playerValue}>
-								{(item.now_cost / 10).toFixed(1)} M &pound;
-							</span>
-						</li>
-					))}
-				</ul>
+				<div className={classes.table}>
+					<ul className={classes.teamsList}>
+						{data.teams.map((item) => (
+							<li key={item.id} className={classes.teamInfo}>
+								<span className={classes.teamName}>{item.name}</span>
+							</li>
+						))}
+					</ul>
+				</div>
 			)}
 		</>
 	);
 };
 
-export default Players;
+export default TeamsData;
