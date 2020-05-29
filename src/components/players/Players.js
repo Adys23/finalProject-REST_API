@@ -4,7 +4,7 @@ import Classes from './Players.module.scss';
 
 import PlayersData from './playersData/playersData';
 
-const PlayersInfo = (props) => {
+const PlayersInfo = () => {
 	const [searchedPhrase, setSearchedPhrase] = useState('');
 
 	const onSearchInputChange = (event) => {
@@ -13,8 +13,8 @@ const PlayersInfo = (props) => {
 
 	return (
 		<div className={Classes.PlayersData}>
-			<h2>Here I will show you players data</h2>
-			<label>Search:</label>
+			<h2>Real-time Fantasy Premier League players data</h2>
+			<label>Search player by name:</label>
 			<input onChange={onSearchInputChange}></input>
 			<PlayersData searchedPhrase={searchedPhrase} />
 		</div>

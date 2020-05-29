@@ -12,7 +12,5 @@ export const mapPositions = (FPLData) => {
 		element_type: positionsNames[player.element_type],
 	}));
 
-	console.log(elements);
-
 	return { ...FPLData, elements };
 };

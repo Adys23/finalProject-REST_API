@@ -1,0 +1,20 @@
+.playersList {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+}
+
+.playerInfo {
+	max-width: 80%;
+	border: 1px solid #666666;
+	display: grid;
+	grid-template-columns: [first] auto [second] 120px [third] 60px [fourth] 120px [end];
+}
+
+.playerName {
+	padding-left: 10px;
+}
+
+.playerValue {
+	text-align: right;
+}
