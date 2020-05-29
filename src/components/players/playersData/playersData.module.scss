@@ -1,20 +1,48 @@
+$hover-violet: rgb(84, 51, 128);
+
 .playersList {
 	list-style: none;
 	display: flex;
 	flex-direction: column;
+	padding: 0px;
+}
+
+.table {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .playerInfo {
-	max-width: 80%;
 	border: 1px solid #666666;
+	padding: 5px 10px;
+	max-width: 600px;
+	min-width: 200px;
 	display: grid;
-	grid-template-columns: [first] auto [second] 120px [third] 60px [fourth] 120px [end];
+	grid-template-areas:
+		'playerName playerName playerName'
+		'team playerPosition value';
+}
+
+.playerInfo:hover {
+	color: white;
+	background-color: $hover-violet;
+	cursor: pointer;
+}
+
+.playerTeam {
+	grid-area: team;
 }
 
 .playerName {
-	padding-left: 10px;
+	grid-area: playerName;
 }
 
 .playerValue {
+	grid-area: value;
 	text-align: right;
+}
+
+.playerPosition {
+	grid-area: playerPosition;
 }

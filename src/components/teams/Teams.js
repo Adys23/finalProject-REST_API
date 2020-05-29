@@ -1,7 +1,14 @@
 import React from 'react';
+import TeamsData from './teamsData/teamsData';
+import Classes from './Teams.module.scss';
 
-const teamsInfo = (props) => (
-	<div>Here I will show you information about Teams</div>
-);
+const Teams = () => {
+	return (
+		<div className={Classes.Teams}>
+			<h2>Teams</h2>
+			<TeamsData />
+		</div>
+	);
+};
 
-export default teamsInfo;
+export default Teams;

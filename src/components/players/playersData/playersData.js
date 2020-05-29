@@ -20,10 +20,16 @@ const Players = ({ searchedPhrase }) => {
 			setIsError(err);
 		};
 
-		setIsLoading(true);
 		fetchData(onFetchSuccess, onFetchFailure);
-		setIsLoading(false);
 	}, []);
+
+	useEffect(() => {
+		if (data.elements.length === 0 && isError === false) {
+			setIsLoading(true);
+		} else {
+			setIsLoading(false);
+		}
+	}, [data, isError]);
 
 	return (
 		<>
@@ -32,30 +38,32 @@ const Players = ({ searchedPhrase }) => {
 			{isLoading ? (
 				<div>Loading ...</div>
 			) : (
-				<ul className={classes.playersList}>
-					{data.elements
-						.filter(({ first_name, second_name }) =>
-							`${first_name} ${second_name}`
-								.toLowerCase()
-								.includes(searchedPhrase)
-						)
-						.map((item) => (
-							<li key={item.id} className={classes.playerInfo}>
-								<span className={classes.playerName}>
-									{item.first_name}
-									&nbsp;
-									{item.second_name}
-								</span>
-								<span>{item.team}</span>
-								<span className={classes.playerPosition}>
-									{item.element_type}
-								</span>
-								<span className={classes.playerValue}>
-									{(item.now_cost / 10).toFixed(1)} M &pound;
-								</span>
-							</li>
-						))}
-				</ul>
+				<div className={classes.table}>
+					<ul className={classes.playersList}>
+						{data.elements
+							.filter(({ first_name, second_name }) =>
+								`${first_name} ${second_name}`
+									.toLowerCase()
+									.includes(searchedPhrase)
+							)
+							.map((item) => (
+								<li key={item.id} className={classes.playerInfo}>
+									<span className={classes.playerName}>
+										{item.first_name}
+										&nbsp;
+										{item.second_name}
+									</span>
+									<span className={classes.playerTeam}>{item.team}</span>
+									<span className={classes.playerPosition}>
+										{item.element_type}
+									</span>
+									<span className={classes.playerValue}>
+										{(item.now_cost / 10).toFixed(1)} M &pound;
+									</span>
+								</li>
+							))}
+					</ul>
+				</div>
 			)}
 		</>
 	);
