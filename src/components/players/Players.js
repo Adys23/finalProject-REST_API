@@ -1,5 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const playersInfo = (props) => <div>Here I will show you players data</div>;
+import Classes from './Players.module.scss';
 
-export default playersInfo;
+import PlayersData from './playersData/playersData';
+
+const PlayersInfo = () => {
+	const [searchedPhrase, setSearchedPhrase] = useState('');
+
+	const onSearchInputChange = (event) => {
+		setSearchedPhrase(event.target.value.toLowerCase());
+	};
+
+	return (
+		<div className={Classes.PlayersData}>
+			<h2>Real-time Fantasy Premier League players data</h2>
+			<label>Search player by name:</label>
+			<input onChange={onSearchInputChange}></input>
+			<PlayersData searchedPhrase={searchedPhrase} />
+		</div>
+	);
+};
+
+export default PlayersInfo;

@@ -1,3 +1,5 @@
+$hover-violet: rgb(84, 51, 128);
+
 .NavigationItems {
 	margin: 0;
 	padding: 0;
@@ -22,6 +24,10 @@
 		.NavLink {
 			color: white;
 			border-left: 1px solid white;
+			border-radius: 15px;
+		}
+		.NavLink:hover {
+			background-color: $hover-violet;
 		}
 	}
 }

@@ -11,7 +11,7 @@ const logo = (props) => (
 			marginBottom: props.margBottom,
 		}}
 	>
-		<img src={logoImage} alt='Burger Logo' />
+		<img src={logoImage} alt='FPL Logo' />
 	</div>
 );
 

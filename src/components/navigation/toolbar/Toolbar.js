@@ -8,7 +8,8 @@ import DrawerToggler from '../sideDrawer/drawerToggler/DrawerToggler';
 
 const toolbar = (props) => (
 	<header className={Classes.Toolbar}>
-		<DrawerToggler clicked={props.drawerTogglerClicked} /> <Logo height='80%' />
+		<DrawerToggler clicked={props.drawerTogglerClicked} />
+		<Logo height='80%' />
 		<nav className={Classes.DesktopOnly}>
 			<NavigationItems />
 		</nav>{' '}
