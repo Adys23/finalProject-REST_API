@@ -19,7 +19,6 @@ const Players = ({ searchedPhrase }) => {
 		const onFetchFailure = (err) => {
 			setIsError(err);
 		};
-
 		fetchData(onFetchSuccess, onFetchFailure);
 	}, []);
 
@@ -38,32 +37,24 @@ const Players = ({ searchedPhrase }) => {
 			{isLoading ? (
 				<div>Loading ...</div>
 			) : (
-				<div className={classes.table}>
-					<ul className={classes.playersList}>
-						{data.elements
-							.filter(({ first_name, second_name }) =>
-								`${first_name} ${second_name}`
-									.toLowerCase()
-									.includes(searchedPhrase)
-							)
-							.map((item) => (
-								<li key={item.id} className={classes.playerInfo}>
-									<span className={classes.playerName}>
-										{item.first_name}
-										&nbsp;
-										{item.second_name}
-									</span>
-									<span className={classes.playerTeam}>{item.team}</span>
-									<span className={classes.playerPosition}>
-										{item.element_type}
-									</span>
-									<span className={classes.playerValue}>
-										{(item.now_cost / 10).toFixed(1)} M &pound;
-									</span>
-								</li>
-							))}
-					</ul>
-				</div>
+				<ul className={classes.playersList}>
+					{data.elements.map((item) => (
+						<li key={item.id} className={classes.playerInfo}>
+							<span className={classes.playerName}>
+								{item.first_name}
+								&nbsp;
+								{item.second_name}
+							</span>
+							<span>{item.team}</span>
+							<span className={classes.playerPosition}>
+								{item.element_type}
+							</span>
+							<span className={classes.playerValue}>
+								{(item.now_cost / 10).toFixed(1)} M &pound;
+							</span>
+						</li>
+					))}
+				</ul>
 			)}
 		</>
 	);
