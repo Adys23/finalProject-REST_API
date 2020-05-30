@@ -1,5 +1,10 @@
 $hover-violet: rgb(84, 51, 128);
 
+.Container {
+	display: flex;
+	justify-content: center;
+}
+
 .playersList {
 	list-style: none;
 	display: flex;

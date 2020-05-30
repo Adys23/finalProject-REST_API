@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Classes from './Players.module.scss';
 
-import PlayersData from './playersData/playersData';
+import PlayersData from './playersData/PlayersData';
 
 const PlayersInfo = () => {
 	const [searchedPhrase, setSearchedPhrase] = useState('');

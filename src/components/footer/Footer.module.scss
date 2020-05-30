@@ -1,4 +1,4 @@
-$main-violet: rgb(39, 0, 90);
+$main-violet: #27005a;
 
 .Footer {
 	margin-top: 80px;
@@ -6,9 +6,18 @@ $main-violet: rgb(39, 0, 90);
 	text-align: center;
 	color: white;
 	background-color: $main-violet;
+
+	a {
+		color: white;
+		text-decoration: none;
+
+		&:hover {
+			color: red;
+		}
+	}
 }
 
 .Copyrights {
-	color: #888888;
+	color: #777777;
 	padding-top: 1rem;
 }
