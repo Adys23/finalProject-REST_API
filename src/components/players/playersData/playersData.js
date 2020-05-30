@@ -6,6 +6,7 @@ import PlayerDetails from '../playerDetails/PlayerDetails';
 import { fetchData } from '../../../services/playersAPI';
 import { mapPositions } from '../../../services/mapPositions';
 import { mapClubName } from '../../../services/mapClubName';
+import LoadingCircle from '../../UI/loadingCircle/LoadingCircle';
 
 const Players = ({ searchedPhrase }) => {
 	const [data, setData] = useState({ elements: [] });
@@ -50,7 +51,9 @@ const Players = ({ searchedPhrase }) => {
 			{isError && <div>Something went wrong ...</div>}
 
 			{isLoading ? (
-				<div>Loading ...</div>
+				<div className={classes.Container}>
+					<LoadingCircle />
+				</div>
 			) : (
 				<Aux>
 					<Modal show={isPlayerClicked} closingModal={closingModalHandler}>

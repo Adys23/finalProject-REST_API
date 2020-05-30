@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import classes from './teamsData.module.scss';
 import { fetchData } from '../../../services/playersAPI';
+import LoadingCircle from '../../UI/loadingCircle/LoadingCircle';
 
 const TeamsData = () => {
 	const [data, setData] = useState({ teams: [] });
@@ -31,7 +32,7 @@ const TeamsData = () => {
 			{isError && <div>Something went wrong ...</div>}
 
 			{isLoading ? (
-				<div>Loading ...</div>
+				<LoadingCircle />
 			) : (
 				<div className={classes.table}>
 					<ul className={classes.teamsList}>
