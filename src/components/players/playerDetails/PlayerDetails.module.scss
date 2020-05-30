@@ -1,0 +1,124 @@
+.FullName {
+	font-size: 1.5rem;
+	font-weight: bolder;
+	padding-bottom: 15px;
+}
+
+.DataContainer {
+	display: flex;
+	flex-direction: column;
+
+	div {
+		margin-bottom: 8px;
+	}
+}
+
+.Position {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	border-bottom: 1px solid;
+
+	span {
+		&:first-child {
+			font-style: italic;
+		}
+
+		&:last-child {
+			font-size: 1.25rem;
+			font-weight: bold;
+		}
+	}
+}
+
+.Price {
+	padding-top: 15px;
+	display: flex;
+	justify-content: space-between;
+
+	span {
+		&:last-child {
+			font-weight: bolder;
+
+			span {
+				font-weight: lighter;
+			}
+		}
+	}
+}
+
+.Form {
+	display: flex;
+	justify-content: space-between;
+
+	span {
+		&:last-child {
+			font-weight: bolder;
+		}
+	}
+}
+
+.PtsPerGame {
+	display: flex;
+	justify-content: space-between;
+}
+
+.TotalPoints {
+	display: flex;
+	justify-content: space-between;
+
+	span {
+		&:last-child {
+			font-weight: bolder;
+		}
+	}
+}
+
+.Minutes {
+	display: flex;
+	justify-content: space-between;
+}
+
+.Goals {
+	display: flex;
+	justify-content: space-between;
+
+	span {
+		&:last-child {
+			font-weight: bolder;
+		}
+	}
+}
+
+.Assists {
+	display: flex;
+	justify-content: space-between;
+
+	span {
+		&:last-child {
+			font-weight: bolder;
+		}
+	}
+}
+
+.CleanSheets {
+	display: flex;
+	justify-content: space-between;
+
+	span {
+		&:last-child {
+			font-weight: bolder;
+		}
+	}
+}
+
+.Bonus {
+	display: flex;
+	justify-content: space-between;
+
+	span {
+		&:last-child {
+			font-weight: bolder;
+		}
+	}
+}
