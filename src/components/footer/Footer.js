@@ -15,7 +15,9 @@ const footer = (props) => (
 			Have you found this site interesting? You have some questions or want to
 			leave your opinion? Use <a href='/contact'>Contact</a> tab.
 		</div>
-		<div className={classes.Copyrights}>Copyrights by Adrian Wasilewski</div>
+		<div className={classes.Copyrights}>
+			Copyrights by Adrian Wasilewski &copy;
+		</div>
 	</div>
 );
 
