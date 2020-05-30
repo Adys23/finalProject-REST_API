@@ -1,0 +1,51 @@
+.FullName {
+	font-size: 1.5rem;
+	font-weight: bolder;
+	padding-bottom: 15px;
+}
+
+.Strength {
+	padding: 0 30px;
+	display: flex;
+	justify-content: space-between;
+
+	span {
+		&:last-child {
+			text-align: center;
+			min-width: 25%;
+		}
+	}
+}
+
+.DataTable {
+	text-align: center;
+	margin-top: 15px;
+
+	display: grid;
+	grid-template-areas:
+		'wh dh lh'
+		'wc dc lc';
+
+	span {
+		border: 1px solid;
+	}
+
+	.WinHeader {
+		grid-area: wh;
+	}
+	.DrawHeader {
+		grid-area: dh;
+	}
+	.LossHeader {
+		grid-area: lh;
+	}
+	.WinCounter {
+		grid-area: wc;
+	}
+	.DrawCounter {
+		grid-area: dc;
+	}
+	.LossCounter {
+		grid-area: lc;
+	}
+}
