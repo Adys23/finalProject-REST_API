@@ -17,12 +17,14 @@ const about = () => {
 			<div className={classes.Container}>
 				<h2>Introduction</h2>
 				<div>
-					First of all I want to thank you for visiting my web app! I am gald
+					First of all I want to thank you for visiting my web app! I am glad
 					that you are interested in getting to know me better.
 				</div>
 				<h2>About me</h2>
 				My name is Adrian Wasilewski and I am {myAge} years old programming
-				enthusiast.
+				enthusiast. I started my jurney few years back with some internet
+				courses about html, css and vanilla javaScript. Later on I started to
+				learn React.
 			</div>
 		</Aux>
 	);
