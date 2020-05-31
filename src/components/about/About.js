@@ -21,10 +21,12 @@ const about = () => {
 					that you are interested in getting to know me better.
 				</div>
 				<h2>About me</h2>
-				My name is Adrian Wasilewski and I am {myAge} years old programming
-				enthusiast. I started my jurney few years back with some internet
-				courses about html, css and vanilla javaScript. Later on I started to
-				learn React.
+				<div>
+					My name is Adrian Wasilewski and I am {myAge} years old programming
+					enthusiast. I started my jurney few years back with some internet
+					courses about html, css and vanilla javaScript. Later on I started to
+					learn React.
+				</div>
 			</div>
 		</Aux>
 	);
