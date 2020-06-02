@@ -3,6 +3,7 @@ $main-violet: #27005a;
 .Container {
 	margin-top: 56px;
 	margin-bottom: 124px;
+	max-width: 100%;
 
 	.FeaturedWrapper {
 		padding: 1em 24px 3em 24px;
@@ -10,7 +11,7 @@ $main-violet: #27005a;
 		text-align: center;
 
 		display: grid;
-		grid-template-areas: 'title title title' 'c1 c2 c3';
+		grid-template-areas: 'title' 'c1' 'c2' 'c3';
 
 		.title {
 			grid-area: title;
@@ -69,4 +70,10 @@ $main-violet: #27005a;
 	background-image: url(../../assets/images/stadium.jpg);
 	background-position: center;
 	background-size: cover;
+}
+
+@media (min-width: 1024px) {
+	.FeaturedWrapper {
+		grid-template-areas: 'title title title' 'c1 c2 c3';
+	}
 }

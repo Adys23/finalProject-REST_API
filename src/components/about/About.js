@@ -1,27 +1,21 @@
 import React from 'react';
 import Aux from '../../hoc/Auxiliary';
 import classes from './About.module.scss';
+import { calculateAge } from '../../services/calculateAge';
 
 const about = () => {
-	const calculateAge = () => {
-		const birthday = new Date(1992, 2, 25);
-		var ageDifMs = Date.now() - birthday.getTime();
-		var ageDate = new Date(ageDifMs);
-		return Math.abs(ageDate.getUTCFullYear() - 1970);
-	};
-
 	const myAge = calculateAge();
 
 	return (
 		<Aux>
 			<div className={classes.Container}>
-				<h2>Introduction</h2>
+				<h2 className={classes.Header}>Introduction</h2>
 				<div>
 					First of all I want to thank you for visiting my web app! I am glad
 					that you are interested in this project and in getting to know me
 					better.
 				</div>
-				<h2>About me</h2>
+				<h2 className={classes.Header}>About me</h2>
 				<div>
 					My name is Adrian Wasilewski and I am {myAge} years old programming
 					enthusiast. I started my jurney few years back with some internet
@@ -30,7 +24,7 @@ const about = () => {
 					later that year I started post-graduate front-end developer studies on
 					WSB University.
 				</div>
-				<h2>About this project</h2>
+				<h2 className={classes.Header}>About this project</h2>
 				<div>
 					I joined Fantasy Premier League community with the start of season
 					2016/2017 thanks to my colleagues from work and since that time I
@@ -44,7 +38,7 @@ const about = () => {
 					into full spectrum statistical tool, which will help lots of players
 					(including me ;) ).
 				</div>
-				<h2>Side note</h2>
+				<h2 className={classes.Header}>Side note</h2>
 				<div>
 					You are more than welcome to leave your comments / ideas / opinions
 					about this project through the <a href='/contact'>Contact</a>{' '}

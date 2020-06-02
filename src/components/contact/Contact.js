@@ -29,6 +29,10 @@ const Contact = () => {
 	return (
 		<Aux>
 			<h2>Contact form</h2>
+			<div className={classes.InfoBox}>
+				You can contact me via below form. Clicking on Submit will redirect you
+				to your e-mail manager app (i.e. Outlook).
+			</div>
 			<div className={classes.Container}>
 				<form className={classes.ContactForm} onSubmit={onSubmit}>
 					<TextField
@@ -41,7 +45,7 @@ const Contact = () => {
 
 					<TextField
 						id='textInput'
-						label='Text'
+						label='Message'
 						variant='outlined'
 						style={{ margin: 8 }}
 						multiline={true}

@@ -6,7 +6,7 @@ import Aux from './hoc/Auxiliary';
 import Toolbar from './components/navigation/toolbar/Toolbar';
 import SideDrawer from './components/navigation/sideDrawer/SideDrawer';
 import Footer from './components/footer/Footer';
-import Index from './containers/main/Index';
+import Index from './components/main/Index';
 import Players from './components/players/Players';
 import Teams from './components/teams/Teams';
 import About from './components/about/About';
