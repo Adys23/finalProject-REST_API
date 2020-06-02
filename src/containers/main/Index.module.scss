@@ -1,0 +1,72 @@
+$main-violet: #27005a;
+
+.Container {
+	margin-top: 56px;
+	margin-bottom: 124px;
+
+	.FeaturedWrapper {
+		padding: 1em 24px 3em 24px;
+		background: #6cd675;
+		text-align: center;
+
+		display: grid;
+		grid-template-areas: 'title title title' 'c1 c2 c3';
+
+		.title {
+			grid-area: title;
+			font-size: 3rem;
+			font-weight: bolder;
+			padding-bottom: 20px;
+		}
+
+		.icon1,
+		.icon2,
+		.icon3 {
+			display: block;
+			width: 128px;
+			height: 128px;
+		}
+
+		.icon1 {
+			background: url(../../assets/icons/computer.png);
+		}
+
+		.icon2 {
+			background: url(../../assets/icons/graphic.png);
+		}
+
+		.icon3 {
+			background: url(../../assets/icons/pie-chart.png);
+		}
+
+		.column1,
+		.column2,
+		.column3 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			min-width: 264px;
+			padding: 64px 16px;
+		}
+
+		.column1 {
+			grid-area: c1;
+		}
+
+		.column2 {
+			grid-area: c2;
+		}
+
+		.column3 {
+			grid-area: c3;
+		}
+	}
+}
+
+.HeaderFeatured {
+	height: 30em;
+	width: 100%;
+	background-image: url(../../assets/images/stadium.jpg);
+	background-position: center;
+	background-size: cover;
+}
