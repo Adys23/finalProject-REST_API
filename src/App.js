@@ -18,7 +18,7 @@ function App() {
 
 	return (
 		<Aux>
-			<Router basename="/finalProject-REST_API" />
+			<Router basename='/finalProject-REST_API'>
 				<Aux>
 					<Toolbar
 						drawerTogglerClicked={() =>
