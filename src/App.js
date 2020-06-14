@@ -18,7 +18,7 @@ function App() {
 
 	return (
 		<Aux>
-			<Router>
+			<Router basename="/finalProject-REST_API" />
 				<Aux>
 					<Toolbar
 						drawerTogglerClicked={() =>
@@ -30,11 +30,11 @@ function App() {
 						closing={() => sideDrawerToggler(false)}
 					/>
 					<Switch>
-						<Route exact path='/finalProject-REST_API' component={Index} />
-						<Route path='/finalProject-REST_API/players' component={Players} />
-						<Route path='/finalProject-REST_API/teams' component={Teams} />
-						<Route path='/finalProject-REST_API/about' component={About} />
-						<Route path='/finalProject-REST_API/contact' component={Contact} />
+						<Route exact path='/' component={Index} />
+						<Route path='/players' component={Players} />
+						<Route path='/teams' component={Teams} />
+						<Route path='/about' component={About} />
+						<Route path='/contact' component={Contact} />
 						<Route component={PageNotFound} />
 					</Switch>
 				</Aux>
