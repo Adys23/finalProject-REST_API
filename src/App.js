@@ -30,11 +30,11 @@ function App() {
 						closing={() => sideDrawerToggler(false)}
 					/>
 					<Switch>
-						<Route exact path='/' component={Index} />
-						<Route path='/players' component={Players} />
-						<Route path='/teams' component={Teams} />
-						<Route path='/about' component={About} />
-						<Route path='/contact' component={Contact} />
+						<Route exact path='/FPLeagueData/' component={Index} />
+						<Route path='/FPLeagueData/players' component={Players} />
+						<Route path='/FPLeagueData/teams' component={Teams} />
+						<Route path='/FPLeagueData/about' component={About} />
+						<Route path='/FPLeagueData/contact' component={Contact} />
 						<Route component={PageNotFound} />
 					</Switch>
 				</Aux>
