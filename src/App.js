@@ -30,11 +30,27 @@ function App() {
 						closing={() => sideDrawerToggler(false)}
 					/>
 					<Switch>
-						<Route exact path='/FPLeagueData/' component={Index} />
-						<Route path='/FPLeagueData/players' component={Players} />
-						<Route path='/FPLeagueData/teams' component={Teams} />
-						<Route path='/FPLeagueData/about' component={About} />
-						<Route path='/FPLeagueData/contact' component={Contact} />
+						<Route
+							exact
+							path='/finalProject-REST_API/FPLeagueData/'
+							component={Index}
+						/>
+						<Route
+							path='/finalProject-REST_API/FPLeagueData/players'
+							component={Players}
+						/>
+						<Route
+							path='/finalProject-REST_API/FPLeagueData/teams'
+							component={Teams}
+						/>
+						<Route
+							path='/finalProject-REST_API/FPLeagueData/about'
+							component={About}
+						/>
+						<Route
+							path='/finalProject-REST_API/FPLeagueData/contact'
+							component={Contact}
+						/>
 						<Route component={PageNotFound} />
 					</Switch>
 				</Aux>
