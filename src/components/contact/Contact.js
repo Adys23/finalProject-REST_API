@@ -23,6 +23,7 @@ const Contact = () => {
 			email: email,
 			text: message,
 		};
+		event.preventDefault();
 		sendEmail(emailObject);
 	};
 
