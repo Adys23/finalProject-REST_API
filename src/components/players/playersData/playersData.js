@@ -8,7 +8,7 @@ import { mapPositions } from '../../../services/mapPositions';
 import { mapClubName } from '../../../services/mapClubName';
 import LoadingCircle from '../../UI/loadingCircle/LoadingCircle';
 
-const Players = ({ searchedPhrase }) => {
+const PlayersData = ({ searchedPhrase }) => {
 	const [data, setData] = useState({ elements: [] });
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
@@ -95,4 +95,4 @@ const Players = ({ searchedPhrase }) => {
 	);
 };
 
-export default Players;
+export default PlayersData;
